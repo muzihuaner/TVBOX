@@ -1,7 +1,6 @@
 # cyuan
 #### 介绍
-本仓库用来存储TVBox和ZYPlayer的源，首页地址：
-<a href="https://czy0220.gitee.io/cyuan/" target = "_blank">https://czy0220.gitee.io/cyuan/</a>
+本仓库用来存储TVBox和ZYPlayer的源
 
 #### 使用说明
 
