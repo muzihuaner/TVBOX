@@ -1,316 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TVBOX-源</title>
-    <script src="https://s1.pstatp.com/cdn/expire-1-M/jquery/1.10.2/jquery.min.js"></script>
-    <style>
-        @media screen and (min-width:1200px) {
-            /*li{width:calc(20% - 5px)}*/
-        }
+      <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.loli.net/ajax/libs/popper.js/1.16.0/umd/popper.min.js" type="text/javascript"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://jsd.onmicrosoft.cn/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js" type="text/javascript"></script>
 
-        @media screen and (min-width:90px) and (max-width:1200px) {
-            li {
-                width: calc(20% - 5px) !important;
-            }
-        }
-
-        @media screen and (min-width:600px) and (max-width:900px) {
-            li {
-                width: calc(33% - 5px) !important;
-            }
-        }
-
-        @media screen and (max-width:600px) {
-            li {
-                width: 100% !important;
-            }
-        }
-
-        * {
-            padding: 0;
-            margin: 0;
-        }
-
-        ul:after {
-            content: "";
-            display: block;
-            clear: both;
-        }
-
-        ul {
-            zoom: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        li {
-            width: calc(20% - 5px);
-            height: auto;
-            padding: 50px 0;
-            text-align: center;
-            margin: 0 5px 10px 0;
-            font-size: 28px;
-            float: left;
-            color: #fff;
-            font-weight: bold;
-            list-style-type: none;
-            cursor: pointer;
-            height: 80px;
-        }
-
-        li span {
-            font-size: 12px;
-            width: 80%;
-            margin: auto;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            display: block;
-            overflow-wrap: break-word;
-            margin-top: 8px;
-        }
-    </style>
 </head>
-
 <body>
-    <center>
-        <h1>TVBOX-源</h1>
-        <h4>点击复制</h4>
-    </center>
-
-    <ul id="ul"></ul>
-    <center>
-        <h4>如果有更多好看好用的 可以联系muzihuaner@hotmail.com</h4>
-    </center>
-    <center>
-        <h4>盒子下载地址</h4>
-
-        <a href="https://wwc.lanzoub.com/b0es81t8j#54jb">https://wwc.lanzoub.com/b0es81t8j#54jb</a> 密码：54jb
-        <br>
-
-        <a href="https://wwjn.lanzout.com/b03jpibob#1234" blank="_target">https://wwjn.lanzout.com/b03jpibob#1234</a>
-        密码：1234
-    </center>
-</body>
-<script>
-    function Toast(msg, duration) {
-        duration = isNaN(duration) ? 3000 : duration;
-        var m = document.createElement('div');
-        m.innerHTML = msg;
-        m.style.cssText = "font-family:siyuan;max-width:60%;min-width: 150px;padding:0 14px;height: 40px;color: rgb(255, 255, 255);line-height: 40px;text-align: center;border-radius: 4px;position: fixed;top: 2%;left: 50%;transform: translate(-50%, -50%);z-index: 999999;background: rgba(0, 0, 0,.7);font-size: 16px;";
-        document.body.appendChild(m);
-        setTimeout(function () {
-            var d = 0.5;
-            m.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
-            m.style.opacity = '0';
-            setTimeout(function () {
-                document.body.removeChild(m)
-            }, d * 1000);
-        }, duration);
-    }
-    const list = [
-        {
-            "url": "https://jihulab.com/duomv/apps/-/raw/main/fast.json",
-            "name": "🏰应用多多",
-            "color": "#48c0a4"
-        },
-        {
-            "url": "http://tv.nxog.top/api.php?mz=xb&id=1&b=欧歌",
-            "name": "🏰欧歌",
-            "color": "#48c0a4"
-        },
-        {
-            "url": "http://52bsj.vip:98/wuaihouse",
-            "name": "🏰吾爱多仓",
-            "color": "#48c0a4"
-        },
-        { color: "#48c0a4", url: "https://tvbox.quickso.cn/tvbox/duo.json", name: "多仓" },
-        { color: "#48c0a4", url: "https://weixine.net/api.json", name: "运输车多仓" },
-        { color: "#48c0a4", url: "https://cf.weixine.net/api.json", name: "运输车多仓备用" },
-        { color: "#91ad70", url: "", name: "后面是单仓" },
-        {
-            "url": "https://ghproxy.net/https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/config.json",
-            "name": "🚀蜂蜜线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://pastebin.com/raw/5NHaxyGR",
-            "name": "🚀道长线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://tvbox.cainisi.cf",
-            "name": "🚀菜妮丝线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "http://home.jundie.top:81/top98.json",
-            "name": "🚀俊佬线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://ghproxy.net/https://raw.githubusercontent.com/lm317379829/PyramidStore/main/py.json",
-            "name": "🚀霜辉月明",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://xhdwc.tk/0",
-            "name": "🚀dxawi0线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://bitbucket.org/xduo/duoapi/raw/master/xpg.json",
-            "name": "🚀小苹果线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://raw.liucn.cc/box/m.json",
-            "name": "🚀老刘备线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://weixine.net/ysc.json",
-            "name": "🚀运输车(有跑马灯)",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://la.kstore.space/download/2863/01.txt",
-            "name": "🐹潇洒线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC.json",
-            "name": "🐹南风线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://la.kstore.space/download/2883/0110.txt",
-            "name": "🐹蚂蚁论坛线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "http://tv.nxog.top/m/111.php?ou=%E6%AC%A7%E6%AD%8C&mz=index2&xl=&jar=index2",
-            "name": "🐹欧歌线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "http://52bsj.vip:98/wuai",
-            "name": "🐹吾爱线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "http://8.210.232.168/xc.json",
-            "name": "🐹星辰线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://agit.ai/66666/mao/raw/branch/master/00/000.m3u8",
-            "name": "🐹分享者线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://notabug.org/qizhen15800/My9394/raw/master/ProfessionalEdition.m3u8",
-            "name": "💎不良帅线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "http://pandown.pro/tvbox/tvbox.json",
-            "name": "💎PanDown线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://www.yingm.cc/dm/dm.json",
-            "name": "💎yingm",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://ghproxy.net/https://raw.githubusercontent.com/kebedd69/TVbox-interface/main/%E7%94%9C%E8%9C%9C.json",
-            "name": "💎甜蜜线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://ghproxy.net/https://raw.githubusercontent.com/xianyuyimu/TVBOX-/main/TVBox/%E4%B8%80%E6%9C%A8%E8%87%AA%E7%94%A8.json",
-            "name": "💎一木线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://agit.ai/kvymin/TV/raw/branch/master/TVBox.json",
-            "name": "💎kvymin线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://agit.ai/n/b/raw/branch/a/b/c.json",
-            "name": "💎agit/abc线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://agit.ai/mmmgit/tvbox/raw/branch/main/zzz1.json",
-            "name": "💎zzz1线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://szyyds.cn/tv/x.json",
-            "name": "💎小马线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://download.kstore.space/download/3313/app/ymshaoer.txt",
-            "name": "🏄️ymshaoer",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://ghproxy.net/https://raw.githubusercontent.com/XiaoYiChaHang/tvbox/main/ysj.json",
-            "name": "🏄️荷城茶秀",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://ghproxy.net/https://raw.githubusercontent.com/gaotianliuyun/gao/master/js.json",
-            "name": "🏄️高天流云",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://agit.ai/cyl518/yl/raw/branch/master/ml.json",
-            "name": "🏄️胖鸭线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://freed.yuanhsing.cf/TVBox/meowcf.json",
-            "name": "🏄️元兴线路",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://raw.liucn.cc/box/m.json",
-            "name": "🏄️老刘备",
-            "color": "#91ad70"
-        },
-        {
-            "url": "https://live.fanmingming.com/tv/m3u/global.m3u",
-            "name": "🏄️global直播源",
-            "color": "#91ad70"
-        },
-        { color: "#7398Ab", url: "https://tvbox.quickso.cn/zy-player/sites2.json", name: "ZY-Player仓库" },
-        { color: "#7398Ab", url: "https://fastly.jsdelivr.net/gh/ls125781003/dmtg@master/zy.json", name: "裹柳" },
-        { color: "#7398Ab", url: "https://dxawi.github.io/0/0.json", name: "dxawi" },
-        { color: "#7398Ab", url: "https://agit.ai/guot54/ygbh/raw/branch/master/zy.json", name: "薄青" },
-        { color: "#7398Ab", url: "https://fastly.jsdelivr.net/gh/ls125781003/dmtg@master/zy.json", name: "松绿" },
-
-    ];
-    $("#ul").html(() => {
-        let html = "";
-        list.forEach(function (v) {
-            // html+="<li style='background:"+v.color+"'>"+v.name+"<br/>"+v.color+"</li>";
-            html += "<li style='background:" + v.color + "' onclick='copy(this)'><input type=\"hidden\" value='" + v.url + "'>" + v.name + "<br/>" + "<span>" + v.url + "</span>" + "</li>";
+    <header>
+        <div class="bg-dark collapse" id="navbarHeader" style="">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-8 col-md-7 py-4">
+                <h4 class="text-white">关于</h4>
+                <p class="text-muted">TVbox，一个基于开源项目tvmovie修改而来，完美移植猫影视核心功能的开源空壳，无任何限制，也无任何广告。软件为空壳，需要导入接口才能使用。</p>
+                <p>如果有更多好看好用的源，可以联系muzihuaner@hotmail.com</p>
+              </div>
+              <div class="col-sm-4 offset-md-1 py-4">
+                <h4 class="text-white">APP下载</h4>
+                <ul class="list-unstyled">
+                  <li><a href="https://wwc.lanzoub.com/b0es81t8j#54jb" class="text-white">APP1（54jb）</a></li>
+                  <li><a href="https://wwjn.lanzout.com/b03jpibob#1234" class="text-white">APP2（1234）</a></li>
+                  <!-- <li><a href="#" class="text-white">Email me</a></li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+          <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+              <strong>TVBOX-源</strong>
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <div class="container my-5">
+        <div class="row justify-content-center" id="video-list">
+            <!-- Video cards will be rendered here  -->
+        </div>
+    </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const videoList = document.getElementById('video-list');
+        
+            // Fetch the data
+            axios.get('yuan.json')
+            .then(function (response) {
+                let videoSources = response.data;
+                let html = '';
+        
+                // Loop through video sources
+                for(let i = 0; i < videoSources.length; i++){
+        
+                    html += `
+                        <div class="col-sm-6 col-md-4 col-lg-2 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">${videoSources[i].name}</h5>
+                                 
+                                    <button class="btn btn-primary copy-btn" data-clipboard-text="${videoSources[i].url}">复制链接</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                videoList.innerHTML = html;
+        
+                const buttons = document.querySelectorAll('.copy-btn');
+                
+                buttons.forEach(btn => {
+                    btn.addEventListener('click', function(event){
+                        handleCopy(event, this.getAttribute('data-clipboard-text'));
+                    });
+                });
+            })
         });
-        return html;
-    });
-    //复制到剪切板 函数
-    function copy(that) {
-        $(that).children("input").attr("type", "text").select();
-        document.execCommand("Copy"); // 执行浏览器复制命令
-        $(that).children("input").attr("type", "hidden");
-        Toast("复制成功", 500);
-    }
-</script>
+        
+        function handleCopy(event, text) {
+            navigator.clipboard.writeText(text)
+                .then(() => alert('已复制'))
+                .catch((error) => alert('复制失败！错误：' + error));
+        }
+        
+        
+      </script>
 
+      <footer class="text-muted">
+        <div class="container">
+         
+          <p>软件安装后，在【设置】里面，【设置】中的【配置地址】中填入接口地址。</p>
+           </div>
+      </footer>
+      <script src="https://gcore.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <!-- <script src="https://unpkg.com/clipboard@2.0.11/dist/clipboard.min.js"></script> -->
+
+</body>
 </html>
