@@ -213,5 +213,10 @@
         "color": "#7398Ab",
         "url": "https://fastly.jsdelivr.net/gh/ls125781003/dmtg@master/zy.json",
         "name": "松绿"
+    },
+    {
+        "color": "#7398Ab",
+        "url": "https://gcore.jsdelivr.net/gh/Cyril0563/lanjing_live@main/TVbox_Free/tv.txt",
+        "name": "源享家"
     }
 ]
