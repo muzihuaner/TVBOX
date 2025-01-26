@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVBox 源分享</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .avatar img {
+            width: 50px;
+            height: 50px;
+            border-radius: 0.5rem;
+            object-fit: cover;
+        }
+        .inner {
+            margin-left: 1rem;
+        }
+        .inner h5 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1a202c;
+        }
+        .inner p {
+            font-size: 0.875rem;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-6 text-gray-800">TVBox客户端</h1>
+        <div class="space-y-4">
+            <a href="https://t.me/tvb_ys" target="_blank" class="block">
+                <div class="item bg-gray-50 hover:bg-gray-100">
+                    <div class="avatar">
+                        <img src="https://s1.imagehub.cc/images/2023/07/01/ystv.md.png" alt="影视TV">
+                    </div>
+                    <div class="inner">
+                        <h5>影视TV 发布频道</h5>
+                        <p>片头片尾快捷标记，最新EXO支持软硬解，无缝换线路换源</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://t.me/TVBoxOSC" target="_blank" class="block">
+                <div class="item bg-gray-50 hover:bg-gray-100">
+                    <div class="avatar">
+                        <img src="https://s1.imagehub.cc/images/2023/07/01/tvb.png" alt="俊于版">
+                    </div>
+                    <div class="inner">
+                        <h5>俊于版 发布频道</h5>
+                        <p>其中的 #q215613905版本</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://t.me/TVBoxOSC" target="_blank" class="block">
+                <div class="item bg-gray-50 hover:bg-gray-100">
+                    <div class="avatar">
+                        <img src="https://s1.imagehub.cc/images/2023/07/01/taka.md.png" alt="takagen99">
+                    </div>
+                    <div class="inner">
+                        <h5>takagen99 发布频道</h5>
+                        <p>其中的 #takagen99</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://pd.qq.com/s/208da3cbs" target="_blank" class="block">
+                <div class="item bg-gray-50 hover:bg-gray-100">
+                    <div class="avatar">
+                        <img src="https://s1.imagehub.cc/images/2023/07/01/ysc.png" alt="影视仓">
+                    </div>
+                    <div class="inner">
+                        <h5>影视仓 发布频道</h5>
+                        <p>Tvbox源码二开，支持多仓订阅，投屏，升级阿里播放器</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://t.me/bh_tvbox" target="_blank" class="block">
+                <div class="item bg-gray-50 hover:bg-gray-100">
+                    <div class="avatar">
+                        <img src="https://s1.imagehub.cc/images/2023/07/01/bh.md.jpeg" alt="宝盒">
+                    </div>
+                    <div class="inner">
+                        <h5>宝盒 发布频道</h5>
+                        <p>Tvbox源码二开，美化UI，自动换源，支持多订阅</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://t.me/yishij" target="_blank" class="block">
+                <div class="item bg-gray-50 hover:bg-gray-100">
+                    <div class="avatar">
+                        <img src="https://s1.imagehub.cc/images/2023/12/14/7db8529ba1ecd7c3d4a0422c1f3d6b19.md.jpeg" alt="影迷">
+                    </div>
+                    <div class="inner">
+                        <h5>影迷 发布频道</h5>
+                        <p>Tvbox源码二开，手机竖屏版，UI新颖，功能不断进化中</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://qiqi2020.lanzoue.com/b09svqv1c" target="_blank" class="block">
+                <div class="item bg-gray-50 hover:bg-gray-100">
+                    <div class="avatar">
+                        <img src="https://s1.imagehub.cc/images/2023/07/31/photo_2023-07-31_20-21-18.md.jpeg" alt="TVBox软件下载">
+                    </div>
+                    <div class="inner">
+                        <h5>TVBox软件下载</h5>
+                        <p>奇奇持续更新分享各种BOX改版</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <h1 class="text-2xl font-bold mt-8 mb-6 text-gray-800">TVBox源</h1>
+        <div id="sources" class="space-y-4"></div>
+        <div class="footer text-center"><h3>本站资源来自网络，如有侵权请联系删除。</h3></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
